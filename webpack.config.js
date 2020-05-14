@@ -4,17 +4,19 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const webpack = require('webpack');
 require('dotenv').config();
 
-new webpack.EnvironmentPlugin(['BACKEND_HOST'])
+// eslint-disable-next-line no-new
+new webpack.EnvironmentPlugin(['BACKEND_HOST']);
 
 module.exports = {
-  entry: process.env.ENTRY,
+  entry: path.join(__dirname, './src/index.tsx'),
   output: {
     path: path.join(__dirname, process.env.OUTPUT_DIR),
-    filename: "js/[name].[hash].js",
-    chunkFilename: "js/[id].[hash].js"
+    filename: 'js/[name].[hash].js',
+    chunkFilename: 'js/[id].[hash].js',
+    publicPath: process.env.PUBLIC_PATH,
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js'],
   },
   module: {
     rules: [
@@ -22,31 +24,35 @@ module.exports = {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
         },
       },
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.(png|svg|jpe?g|gif)(\?.*)?$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          outputPath: "img/",
-          name: "[name].[ext]"
-        }
-      }, 
+          outputPath: 'img/',
+          name: '[name].[ext]',
+        },
+      },
       {
         test: /\.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          outputPath: "fonts/",
-          name: "[name].[ext]"
-        }
-      }
-    ]
+          outputPath: 'fonts/',
+          name: '[name].[ext]',
+        },
+      },
+    ],
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
-  ]
+      template: './src/index.html',
+    }),
+  ],
 };

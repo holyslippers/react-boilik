@@ -6,11 +6,8 @@
 - Typescript 3.8.3
 - Webpack 4.43
 - Babel 7.9.6 с пресетами (env,react,typescript) и плагином (styled_components)
-
-
-## Запуск
-
-npm i
+- StyledComponents v4.4.1
+- AntDesign 4.2.2
 
 ## Запуск dev среды 
 
@@ -20,14 +17,11 @@ npm start
 
 npm run build
 
-
 ## Конфигурация
 
-Для dev среды
+- webpack.dev.config.js - dev среда
+- webpack.prod.config.js - prod среда
 
-webpack.dev.config.js
+## Команды бойлерплейта
 
-Для prod
-
-webpack.prod.config.js
-
+- Запуск eslint `npm run lint`

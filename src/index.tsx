@@ -1,4 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/index';
+import App from '@/App';
+// Ant Design CSS
+import 'antd/dist/antd.css';
+
 ReactDOM.render(<App />, document.getElementById('root'));
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    ReactDOM.render(<App />, document.getElementById('root'));
+  });
+}
