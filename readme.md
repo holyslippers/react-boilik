@@ -25,3 +25,8 @@ npm run build
 ## Команды бойлерплейта
 
 - Запуск eslint `npm run lint`
+
+## Backers
+
+@holyslippers
+
