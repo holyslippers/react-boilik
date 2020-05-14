@@ -28,5 +28,6 @@ npm run build
 
 ## Backers
 
-@holyslippers
+[@holyslippers](http://github.com/holyslippers)
+[@aanation](https://github.com/aanation)
 
