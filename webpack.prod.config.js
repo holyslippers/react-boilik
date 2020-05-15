@@ -1,10 +1,10 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const TerserJSPlugin = require('terser-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const baseConfig = require('./webpack.config');
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const TerserJSPlugin = require('terser-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const baseConfig = require('./webpack.config')
 
-require('dotenv').config();
+require('dotenv').config()
 
 module.exports = merge(baseConfig, {
   mode: 'production',
@@ -21,4 +21,4 @@ module.exports = merge(baseConfig, {
     new webpack.optimize.ModuleConcatenationPlugin(),
     new CleanWebpackPlugin(),
   ],
-});
+})

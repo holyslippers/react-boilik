@@ -1,6 +1,6 @@
-const merge = require('webpack-merge');
-const baseConfig = require('./webpack.config');
-require('dotenv').config();
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.config')
+require('dotenv').config()
 
 module.exports = merge(baseConfig, {
   mode: 'development',
@@ -19,4 +19,4 @@ module.exports = merge(baseConfig, {
       //   }
     },
   },
-});
+})

@@ -14,6 +14,7 @@ module.exports = {
     },
   },
   rules: {
+    semi: [2, 'never'],
     'no-plusplus': 0,
     'import/prefer-default-export': 0,
     'no-continue': 0,
@@ -44,4 +45,4 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser',
   },
-};
+}

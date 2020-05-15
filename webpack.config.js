@@ -1,11 +1,11 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const webpack = require('webpack');
-require('dotenv').config();
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const webpack = require('webpack')
+require('dotenv').config()
 
 // eslint-disable-next-line no-new
-new webpack.EnvironmentPlugin(['BACKEND_HOST']);
+new webpack.EnvironmentPlugin(['BACKEND_HOST'])
 
 module.exports = {
   entry: path.join(__dirname, './src/index.tsx'),
@@ -16,7 +16,7 @@ module.exports = {
     publicPath: process.env.PUBLIC_PATH,
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
     rules: [
@@ -55,4 +55,4 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
-};
+}
