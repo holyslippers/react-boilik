@@ -21,6 +21,7 @@ npm run build
 
 - webpack.dev.config.js - dev среда
 - webpack.prod.config.js - prod среда
+- webpack.test.config.js - test среда
 
 ## Команды 
 
