@@ -1,8 +1,8 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const webpack = require('webpack');
-require('dotenv').config();
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const webpack = require('webpack')
+require('dotenv').config()
 
 module.exports = {
   entry: path.join(__dirname, './src/index.tsx'),
@@ -13,7 +13,7 @@ module.exports = {
     publicPath: process.env.PUBLIC_PATH,
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   module: {
     rules: [
@@ -48,11 +48,11 @@ module.exports = {
   },
   plugins: [
     new webpack.EnvironmentPlugin([
-      'BACKEND_HOST'
+      'BACKEND_HOST',
     ]),
     new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
   ],
-};
+}

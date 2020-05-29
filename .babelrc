@@ -1,12 +1,34 @@
 {
-    "presets": [
+  "presets": [
+    [
       "@babel/preset-env",
-      "@babel/preset-typescript",
-      "@babel/preset-react"
+      {
+        "modules": false
+      }
     ],
-    "plugins": [
-      "@babel/proposal-class-properties",
-      "@babel/proposal-object-rest-spread",
-      "babel-plugin-styled-components"
+    "@babel/preset-typescript",
+    "@babel/preset-react"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    }
+  },
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/proposal-class-properties",
+    "@effector/babel-plugin",
+    "@effector/babel-plugin-react",
+    "babel-plugin-styled-components",
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@": "./src",
+        }
+      }
     ]
-  }
+  ]
+}
